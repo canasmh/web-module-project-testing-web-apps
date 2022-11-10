@@ -34,6 +34,7 @@ test('renders THREE error messages if user enters no values into any fields.', a
     await waitFor(() => userEvent.click(submitBtn));
     await waitFor(() => screen.getAllByText(/error/i));
 
+    expect(screen.getAllByText(/error/i)).toHaveLength(3);
 });
 
 test('renders ONE error message if user enters a valid first name and last name but no email.', async () => {
