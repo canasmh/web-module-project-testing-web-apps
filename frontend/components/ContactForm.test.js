@@ -9,6 +9,11 @@ test('renders without errors', () => {
 });
 
 test('renders the contact form header', () => {
+    render(<ContactForm />);
+    const headerElement = screen.getByText(/contact form/i);
+    expect(headerElement).toBeTruthy();
+    expect(headerElement).toBeInTheDocument();
+    expect(headerElement).toBeVisible();
 
 });
 
